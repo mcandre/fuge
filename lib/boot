@@ -2,7 +2,7 @@
 #
 
 #bash color
-PROMPT_COMMAND='PS1="[ 33[0;33m][!]`if [[ $? = "0" ]]; then echo "[�33[32m]"; else echo "[�33[31m]"; fi`[u.h: `if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "W"; else echo "w"; fi`]$[ 33[0m] "; echo -ne " 33]0;`hostname -s`:`pwd` 07"' >> ~/.bashrc
+PROMPT_COMMAND='PS1="[ 33[0;33m][!]`if [[ $? = "0" ]]; then echo "[�33[32m]"; else echo "[�33[31m]"; fi`[u.h: `if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "W"; else echo "w"; fi`]$[ 33[0m] "; echo -ne " 33]0;`hostname -s`:`pwd` 07"' >> $HOME/.bashrc
 
 #hostname
 #hostname fs2.fuge.it
@@ -17,11 +17,11 @@ a2enmod ssl
 a2enmod rewrite
 apache2ctl restart
 
-cd ~
+cd $HOME
 wget http://h264.code-shop.com/download/apache_mod_h264_streaming-2.2.7.tar.gz
 tar -zxvf apache_mod_h264_streaming-2.2.7.tar.gz
 
-cd ~/mod_h264_streaming-2.2.7
+cd $HOME/mod_h264_streaming-2.2.7
 ./configure --with-apxs="$(which apxs2)"
 make
 sudo make install
