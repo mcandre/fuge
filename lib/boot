@@ -22,7 +22,7 @@ tar -zxvf apache_mod_h264_streaming-2.2.7.tar.gz
 cd "$HOME/mod_h264_streaming-2.2.7"
 ./configure --with-apxs="$(which apxs2)"
 make
-sudo make install
+make install
 
 ## Install Python:
 apt-get install python2.6 python2.6-twisted python-dev
